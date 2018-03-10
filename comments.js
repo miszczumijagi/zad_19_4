@@ -5,12 +5,12 @@ function comments(state = [], action) {
         case ADD_COMMENT:
             return [{
                 id: action.id,
-                text: action.text
+                text: action.text,
                 votes: 0
             }
-            , ...state.comments];
+            , ...state];
 
-        case REMOVE_COMMENT:
+        case DELETE_COMMENT:
             return state.filter(comment => comment.id !== action.id);
 
         case EDIT_COMMENT:
